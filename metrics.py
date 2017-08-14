@@ -37,7 +37,7 @@ def calc_prodavg(mdata, threshold):
 def calc_tmr(data, threshold):
     """
     compute True Match Rate (TMR) (=1-FNMR)
-    :param data: list of genuine similarity-scores
+    :param data: list of bona fide similarity-scores
     :param threshold: threshold of the biometric system
     :return: TMR
     """
