@@ -1,6 +1,7 @@
 __author__ = "Ulrich Scherhag"
 __copyright__ = "Copyright (C) 2017 Hochschule Darmstadt"
-__license__ = "License Agreement provided by Hochschule Darmstadt"
+__license__ = "License Agreement provided by Hochschule Darmstadt" \
+              "(https://github.com/dasec/mvr/blob/master/mvr-license-170816.pdf)"
 __version__ = "1.0"
 
 import operator
@@ -37,6 +38,7 @@ def calc_prodavg(mdata, threshold):
             mdata[morph][subj] = mean(sample > threshold for sample in mdata[morph][subj].values())
         mdata[morph] = reduce(operator.mul, mdata[morph].values(), 1)
     return mean(mdata.values())
+
 
 def calc_tmr(data, threshold):
     """

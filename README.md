@@ -28,3 +28,6 @@ usage: mnmr_python.py [-h] [-m {minmax,prodavg}] threshold morphs bona_fides <br
 <br>
 <br>
 [1] U. Scherhag, A. Nautsch, C. Rathgeb, et. al.: Biometric Systems under Morphing Attacks: Assessment of Morphing Techniques and Vulnerability Reporting (2017)
+<br>
+<br>
+&#169; Hochschule Darmstadt

@@ -1,6 +1,7 @@
 __author__ = "Ulrich Scherhag"
 __copyright__ = "Copyright (C) 2017 Hochschule Darmstadt"
-__license__ = "License Agreement provided by Hochschule Darmstadt"
+__license__ = "License Agreement provided by Hochschule Darmstadt" \
+              "(https://github.com/dasec/mvr/blob/master/mvr-license-170816.pdf)"
 __version__ = "1.0"
 
 import argparse
