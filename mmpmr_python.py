@@ -1,4 +1,7 @@
-"""Copyright 2017..."""
+__author__ = "Ulrich Scherhag"
+__copyright__ = "Copyright (C) 2017 Hochschule Darmstadt"
+__license__ = "License Agreement provided by Hochschule Darmstadt"
+__version__ = "1.0"
 
 import argparse
 import csv
