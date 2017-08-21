@@ -13,21 +13,19 @@ import metrics
 
 parser = argparse.ArgumentParser(description='Calculate Mated Morph Presentation Match Rate (MMPMR) of scores given '
                                              'in CSV')
-parser.add_argument('threshold', type=float, nargs=1,
+parser.add_argument('threshold', type=float,
                     help='threshold of the biometric system')
-parser.add_argument('path', type=str, nargs=1,
+parser.add_argument('path', type=str,
                     help='path of the CSV containing the similarity-scores in format:'
                          '<morph-id>; <subject-id>; <sample-id>; <score>')
 parser.add_argument('-m', '--metric', dest='metric', default='minmax', type=str, choices=['minmax', 'prodavg'],
                     help='metric to compute MMPMR (default: compute MinMax-MMPMR)')
 args = parser.parse_args()
-path = args.path[0]
-t = args.threshold[0]
 
 # read data from csv in file structure (<morph-id>; <subject-id>; <sample-id>; <score>)
 data = defaultdict(lambda: defaultdict(dict))
-with open(path, newline='') as csvfile:
-    print('reading data: ' + path)
+with open(args.path, newline='') as csvfile:
+    print('reading data: ' + args.path)
     line = csv.reader(csvfile, delimiter=';', quotechar='|')
     for row in line:
         if row:
@@ -35,8 +33,8 @@ with open(path, newline='') as csvfile:
 
 # calculate metric
 if args.metric == 'minmax':
-    print('Computing MinMax-MMPMR:, theshold: ' + str(t))
-    print(metrics.calc_minmax(data, t))
+    print('Computing MinMax-MMPMR:, theshold: ' + str(args.threshold))
+    print(metrics.calc_minmax(data, args.threshold))
 elif args.metric == 'prodavg':
-    print('Computing ProdAvg-MMPMR:, theshold: ' + str(t))
-    print(metrics.calc_prodavg(data, t))
+    print('Computing ProdAvg-MMPMR:, theshold: ' + str(args.threshold))
+    print(metrics.calc_prodavg(data, args.threshold))
