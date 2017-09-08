@@ -11,7 +11,7 @@ import metrics
 
 # parse arguments
 
-parser = argparse.ArgumentParser(description='Calculate Relative Morph Non-Match Rate (RMNMR) of scores given in CSVs')
+parser = argparse.ArgumentParser(description='Calculate Relative Morph Match Rate (RMMR) of scores given in CSVs')
 parser.add_argument('threshold', type=float,
                     help='threshold of the biometric system')
 parser.add_argument('morphs', type=str,
@@ -60,5 +60,5 @@ print('Computing TMR:, theshold: ' + str(args.threshold))
 tmr = metrics.calc_tmr(bona_fide_scores, args.threshold)
 
 # compute RNMNR
-rnmnr = tmr - mmpmr
-print('RNMNR: ' + str(rnmnr))
+rmmr = 1 + (mmpmr - tmr)
+print('RMMR: ' + str(rmmr))

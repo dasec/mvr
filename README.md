@@ -13,10 +13,10 @@ usage: mmpmr_python.py [-h] [-m {minmax,prodavg}] threshold path <br>
 * **-h**: help menu, optional
 
 
-## Relative Morph Non Match Rate (RMNMR)
-Calculate Relative Morph Non-Match Rate (RMNMR).
+## Relative Morph Match Rate (RMMR)
+Calculate Relative Morph Match Rate (RMMR).
 
-usage: mnmr_python.py [-h] [-m {minmax,prodavg}] threshold morphs bona_fides <br>
+usage: rmmr_python.py [-h] [-m {minmax,prodavg}] threshold morphs bona_fides <br>
 
 * **threshold**: threshold of the biometric system
 * **morphs**: path to a CSV-file containing the _similarity_ scores of the morph attacks. The CSV-file needs to be of the format: <br> \<morph-id\>; \<subject-id\>; \<sample-id\>; \<score\>
